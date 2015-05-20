@@ -22,5 +22,17 @@ class Blog extends CI_Controller {
 		$this->load->view('comments');
 		$this->load->view('footer');
 	}
+
+	public function articles(){
+		$data = array();
+		$data['title'] = 'Articles';
+		$this->load->view('head',$data);
+		$this->load->view('left_menu');		
+		$data['results'] = $this->blog_model->getArticles();
+		$this->load->view('article_content',$data);
+		$this->load->view('prefooter');
+		$this->load->view('comments');
+		$this->load->view('footer');		
+	}
 }
 
