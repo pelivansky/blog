@@ -40,9 +40,44 @@ class Blog extends CI_Controller {
 		$data['articles'] = $this->blog_model->getArtPag($config['per_page'], $page);
 		$data['links'] = $this->pagination->create_links();			
 		$this->load->view('article_content',$data);
-		$this->load->view('prefooter');
-		$this->load->view('comments');
+		$data['top_article'] = $this->blog_model->getTopArticle();
+		$this->load->view('prefooter',$data);
+		$data['last_comment'] = $this->blog_model->getLastComm();
+		$this->load->view('comments',$data);
 		$this->load->view('footer');		
 	}
+
+	public function comment_by_book(){
+		$data = array();
+		$data['title'] = 'Comments';
+		$this->load->view('head',$data);
+		$this->load->view('left_menu');
+		$data['article'] = $this->blog_model->getArtById();
+		$data['comment'] = $this->blog_model->getComment();
+		$this->load->view('content',$data);	
+		$data['top_article'] = $this->blog_model->getTopArticle();
+		$this->load->view('prefooter',$data);
+		$data['last_comment'] = $this->blog_model->getLastComm();
+		$this->load->view('comments',$data);
+		$this->load->view('footer');	
+	}
+
+	function add_comment(){
+		$this->validation();
+		if($this->form_validation->run() == FALSE){
+			redirect('blog/articles');
+		}else{
+			if($this->blog_model->add_comment() == TRUE){
+				redirect('blog/comment_by_book/'.$this->input->post('url_seg'));
+			}
+		}
+	}
+
+	function validation(){
+		$this->form_validation->set_rules('name','Name','trim|xss_clean|required');
+		$this->form_validation->set_rules('comm','Comment','trim|xss_clean|required');
+		
+	}
+
 }
 
