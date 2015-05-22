@@ -50,7 +50,7 @@
     </div> 
     <?php } ?> 
     <div class="center">
-        <hr><?php echo heading('Add a comment!',2); ?><br /> 
+        <hr><br /><?php echo heading('Add a comment!',2); ?><br /> 
         <?php echo form_open('blog/add_comment');?> 
         <input type="hidden" name="url_seg" value="<?php echo $this->uri->segment(3); ?>">
         <input type="hidden" name="date" value="<?php echo date("Y/m/d"); ?>">
@@ -77,9 +77,9 @@
 
             echo form_textarea($data);
         ?>   
-        <hr><h3>...</h3>                      
+        <h3>...</h3>                      
         <?php echo form_submit('submit','add comment','class="comm_button"'); ?>     
         <?php echo form_close(); ?>
-        <hr>
+        <br /><hr>
     </div>
   </div>
