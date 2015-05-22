@@ -4,6 +4,6 @@
 	    <?php if(is_array($top_article) && !empty($top_article))          
 	            foreach($top_article as $row){ ?>
 	        <img src="<?php echo base_url(); ?>assets/images/arrow.gif" alt="" />
-	        <a href="#"><?php echo $row->title . ' ,' . $row->author ?></a> <br />
+	        <a href="<?php echo base_url(); ?>blog/comment_by_book/<?php echo $row->id; ?>"><?php echo $row->title . ' ,' . $row->author ?></a> <br />
 	    <?php } ?>    
       </div>

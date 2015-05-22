@@ -24,7 +24,27 @@
         <h3>posted..</h3>
         <?php echo $row->post_content; ?>
         <p class="date">
-            <?php echo substr($row->time_posted,5,5); ?>
+            <?php 
+                $month = array(
+                  1 => "Jan", 
+                  2 => "Feb", 
+                  3 => "Mar", 
+                  4 => "Apr", 
+                  5 => "May", 
+                  6 => "Jun", 
+                  7 => "Jul", 
+                  8 => "Aug", 
+                  9 => "Sep", 
+                  10 => "Oct", 
+                  11 => "Nov", 
+                  12 => "Dec"
+                  );
+                $returned_day = substr($row->time_posted,8,2);
+                $returned_month = substr($row->time_posted,5,2);
+                $returned_month = ltrim($returned_month,'0');
+                $month = $month[$returned_month];
+                echo $month . '.' . $returned_day ;
+              ?>
         </p>
         <br />          
     </div> 
