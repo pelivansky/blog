@@ -93,5 +93,33 @@ class Blog extends CI_Controller {
 			redirect('blog/articles');			
 	}
 
+	function gallery(){
+		$data = array();	    		
+		$data['title'] = 'Gallery';
+		$this->load->view('head',$data);
+		$this->load->view('left_menu');
+		$data['articles'] = $this->blog_model->articles();
+		$this->load->view('gallery',$data);					
+		$data['top_article'] = $this->blog_model->getTopArticle();
+		$this->load->view('prefooter',$data);
+		$data['last_comment'] = $this->blog_model->getLastComm();
+		$this->load->view('comments',$data);
+		$this->load->view('footer');		
+	}
+
+	function contact(){
+		$data = array();	    		
+		$data['title'] = 'contact';
+		$this->load->view('head',$data);
+		$this->load->view('left_menu');
+		$this->load->view('contact',$data);					
+		$data['top_article'] = $this->blog_model->getTopArticle();
+		$this->load->view('prefooter',$data);
+		$data['last_comment'] = $this->blog_model->getLastComm();
+		$this->load->view('comments',$data);
+		$this->load->view('footer');
+
+	}
+
 }
 

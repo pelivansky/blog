@@ -6,7 +6,7 @@ body { margin:5px 0; padding:0; font: 74% Arial, Sans-Serif; color:#000; line-he
 #header h1 { background: inherit; font: bold 3em "Tahoma", Arial; color: #85621E; line-height: 1em;}
 #header h3 { background: inherit; font: bold 1em "Tahoma", Arial; color: #000; }
 #header .title { padding: 60px 0 0 60px; }
-#main { background: url(../images/bg.jpg) no-repeat top; height: 553px; margin: 0; padding: 0 }	
+#main { background: url(../images/bg.jpg) no-repeat top; height: 353px; margin: 0; padding: 0 }	
 #main .center { width: 550px; float: right; padding: 0 60px 0 0px; }
 #main #article{margin: 20px 0px 80px;text-align: right;font-family: 'Satisfy';font-size: 30px;font-weight:700;}
 #main .center a{font-family: 'Satisfy';}
@@ -81,5 +81,12 @@ input.button { background: #FFFFF4; color: #808080; border-right: 1px solid #ccc
 .like_button:hover{opacity:1;}
 .like:after{content: '';margin: 8px 0px;width: 55px;height: 1px;display: block;border-top: 1px double #000;}
 #hello{margin:0px;padding:40px 0px;text-align: center;font-family: 'Lobster';font-size: 29px;color:#000;font-weight: 100;}
-.share_stuff{position:fixed;font-size: 23px;margin:60px 0px 0px 64px;}
+.share_stuff{position:fixed;font-size: 23px;margin:-20px 0px 0px 64px;}
 .share_stuff li{margin: 27px;}
+.share_stuff li a:hover{font-size: 43px;}
+.gallery{width: 350px;float:left;}
+.gal_img{width: 120px;height:120px;margin-top:20px;float: right;background: transparent;}
+.gal_img img{display: block;width:100%;height:80%;margin-bottom: 5px;}
+.an{position: absolute;top:350px;left:740px;width:300px;height:300px;border:2px solid #fff;}
+.an img{width: 100%;height: 100%;}
+

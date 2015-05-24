@@ -7,6 +7,11 @@ class Blog_Model extends CI_Model {
 		return $q;
 	}
 
+	function articles(){
+		$q = $this->db->get('articles');
+		return $q->result();		
+	}
+
 	function getArtPag($limit,$start){
 		$this->db->limit($limit,$start);
 		$q = $this->db->get('articles');
