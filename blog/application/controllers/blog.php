@@ -12,14 +12,16 @@ class Blog extends CI_Controller {
         $this->load->library('javascript');
     }	
 
-	public function home()
-	{
+	public function home(){
+		$data = array();
 		$data['title'] = 'books';
 		$this->load->view('head',$data);
-		$this->load->view('content');
 		$this->load->view('left_menu');
-		$this->load->view('prefooter');
-		$this->load->view('comments');
+		$this->load->view('home');
+		$data['top_article'] = $this->blog_model->getTopArticle();
+		$this->load->view('prefooter',$data);
+		$data['last_comment'] = $this->blog_model->getLastComm();
+		$this->load->view('comments',$data);
 		$this->load->view('footer');
 	}
 
@@ -77,6 +79,18 @@ class Blog extends CI_Controller {
 		$this->form_validation->set_rules('name','Name','trim|xss_clean|required');
 		$this->form_validation->set_rules('comm','Comment','trim|xss_clean|required');
 		
+	}
+
+	function vote(){			
+			$like   = $this->input->post('like');
+			$unlike = $this->input->post('unlike');
+			$id     = $this->input->post('id');
+			if(isset($like) && !empty($like)){
+				$this->blog_model->like($id);
+			}elseif(isset($unlike) && !empty($unlike)){
+				$this->blog_model->unlike($id);
+			}
+			redirect('blog/articles');			
 	}
 
 }

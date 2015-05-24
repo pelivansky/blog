@@ -1,5 +1,5 @@
     <div class="center" id="article">Articles</div>  
-    <?php if(is_array($articles) && !empty($articles))          
+    <?php if(is_array($articles) && !empty($articles)){          
             foreach($articles as $row){ ?>    
               <div class="center">
                 <h2></i><?php echo $row->title .'&nbsp'; ?><a href="<?php echo base_url(); ?>blog/comment_by_book/<?php echo $row->id; ?>"><i class="fa fa-book"></i></a></h2>
@@ -15,13 +15,16 @@
                   <?php echo $row->date_posted; ?>
                 </p>
                 <span class="like">
-                    <button class="like_button"><i class="fa fa-thumbs-up"></i></button>
-                    <span>16</span>
-                    <button class="like_button"><i class="fa fa-thumbs-down"></i></button>
-                    <span>11</span>
+                  <?php echo form_open('blog/vote'); ?>
+                    <input type="hidden" name="id" value="<?php echo $row->id; ?>">
+                    <button type="submit" name="like" class="like_button" value="like"><i class="fa fa-thumbs-up"></i></button>
+                    <span><?php echo $row->likes; ?></span>
+                    <button type="submit" name="unlike" class="like_button" value="unlike"><i class="fa fa-thumbs-down"></i></button>
+                    <span><?php echo $row->dislikes; ?></span>
+                  <?php echo form_close(); ?>  
                 </span> 
               </div>
-    <?php } ?>
+    <?php } }else{echo 'sorry,no data available!';} ?>
     <div class="center" id="pagination_links"><?php echo $links; ?></div>
   </div>
          

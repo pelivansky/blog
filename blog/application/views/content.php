@@ -9,8 +9,6 @@
                 Posted by.. <?php echo $row->poster; ?>
                 <img src="<?php echo base_url(); ?>assets/images/more.gif" alt="" />  
                 <a href="<?php echo $row->link_more; ?>">Read more</a> 
-                <img src="<?php echo base_url(); ?>assets/images/comment.gif" alt="" /> 
-                <a href="#">Comments (<?php echo $row->nr_of_comments; ?>)</a> 
                 <img src="<?php echo base_url(); ?>assets/images/timeicon.gif" alt="" /> 
                 <?php echo $row->date_posted; ?>
               </p>
@@ -18,7 +16,7 @@
           </div>
     <?php } ?>
     <?php if(is_array($comment) && !empty($comment))
-      foreach($comment as $row){?> 
+      foreach($comment as $row){ ?> 
     <div class="center">      
         <h2><?php echo '&nbsp&nbsp&nbsp&nbsp' . $row->name; ?></h2>
         <h3>posted..</h3>

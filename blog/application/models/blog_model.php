@@ -34,12 +34,21 @@ class Blog_Model extends CI_Model {
 	}
 
 	function getComment(){
+		$id = $this->uri->segment(3);
 		$this->db->select('*');
 		$this->db->from('articles');
-		$this->db->where('id',$this->uri->segment(3));
+		$this->db->where('id',$id);
 		$this->db->join('comments','comments.article_id = articles.id');
 		$q = $this->db->get();
-		return $q->result();		
+		$nr = $q->num_rows();	
+		$this->db->from('articles');
+		$this->db->where('id',$id);
+		$data = array(
+				'nr_of_comments' => $nr
+			);
+		$this->db->update('articles',$data);		
+		return $q->result();
+
 	}
 
     public function add_comment(){
@@ -52,7 +61,27 @@ class Blog_Model extends CI_Model {
     	$this->db->insert('comments', $data);
     	return $this->input->post('url_seg');
     	return TRUE;
+    }
 
-
-    }			
+	function like($id){
+		$this->db->where('id', $id);
+		$q = $this->db->get('articles');
+		$val = $q->row('likes');
+		$data = array(
+			'likes' => $val + 1
+			);
+		$this->db->where('id', $id);
+		$this->db->update('articles',$data);
+	} 
+	function unlike($id){
+		$this->db->where('id', $id);
+		$q = $this->db->get('articles');
+		$val = $q->row('dislikes');
+		$data = array(
+			'dislikes' => $val + 1
+			);
+		$this->db->where('id', $id);
+		$this->db->update('articles',$data);
+	} 	   
+	
 }	
