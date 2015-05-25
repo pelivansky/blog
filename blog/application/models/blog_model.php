@@ -87,6 +87,10 @@ class Blog_Model extends CI_Model {
 			);
 		$this->db->where('id', $id);
 		$this->db->update('articles',$data);
-	} 	   
+	} 
+
+	function register($info){
+		$this->db->insert('users',$info);
+	}	   
 	
 }	

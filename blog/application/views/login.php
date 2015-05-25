@@ -16,13 +16,18 @@
 		 	<br/>
 		</div>	
 		<div class="log_reg">
-			<h2>what do you want...</h2>
+			<?php echo form_open('blog/loggedin'); ?>
+			<h2>Login</h2>
 			<br />
-			<h2>..to do?</h2>
-			<div class="log_reg_a">
-				<a href = "<?php echo base_url(); ?>blog/login">Login</a>
-				<a href = "<?php echo base_url(); ?>blog/register">Register</a>
-			</div>
+			<h3>Name :</h3>
+			<input type="text" name="name" size="20" style="border-radius:4px;" required>
+			<?php echo validation_errors('name'); ?>
+			<h3>Password :</h3>
+			<input type="password" name="pass" size="20" style="border-radius:4px;" required>
+			<?php echo validation_errors('pass'); ?>
+		    <h3>...</h3>                      
+	        <?php echo form_submit('login','Go fish','class="comm_button"'); ?> 	
+			<?php form_close(); ?>		
 		</div>
 
 	 </div>

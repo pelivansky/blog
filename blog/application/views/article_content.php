@@ -24,7 +24,7 @@
                   <?php echo form_close(); ?>  
                 </span> 
               </div>
-    <?php } }else{echo 'sorry,no data available!';} ?>
+    <?php } } ?>
     <div class="center" id="pagination_links"><?php echo $links; ?></div>
   </div>
          
