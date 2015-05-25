@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2015 at 11:49 PM
+-- Generation Time: May 25, 2015 at 01:27 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -47,19 +47,19 @@ CREATE TABLE IF NOT EXISTS `articles` (
 --
 
 INSERT INTO `articles` (`id`, `title`, `author`, `content`, `date_posted`, `link_more`, `nr_of_comments`, `poster`, `likes`, `dislikes`, `img`, `price`) VALUES
-(1, 'the fountainhead', 'Ayn Rand', 'When The Fountainhead was first published, Ayn Rand''s daringly original literary vision and her groundbreaking philosophy, Objectivism, won immediate worldwide interest and acclaim. This instant classic is the story of an intransigent young architect..', '2015-05-21', 'http://www.goodreads.com/book/show/2122.The_Fountainhead', 6, 'jill', 5, 3, 'fountainhead.jpg', 10),
+(1, 'the fountainhead', 'Ayn Rand', 'When The Fountainhead was first published, Ayn Rand''s daringly original literary vision and her groundbreaking philosophy, Objectivism, won immediate worldwide interest and acclaim. This instant classic is the story of an intransigent young architect..', '2015-05-21', 'http://www.goodreads.com/book/show/2122.The_Fountainhead', 6, 'jill', 8, 4, 'fountainhead.jpg', 10),
 (2, 'platforma', 'Michel Houellebecq ', 'Michel Houellebecq is the first French novelist since Albert Camus to find a wide readership outside France. His novel Les particules elementaires, published in this country two years ago as Atomised, was praised by all manner of sober critics and his..', '2015-05-22', 'http://www.theguardian.com/books/2002/sep/07/fiction.michelhouellebecq', 2, 'john', 5, 3, 'platform.jpg', 9),
 (3, 'fight club', 'Chuck Palahniuk ', '\r\nIn his debut novel, Chuck Palahniuk showed himself to be his generation''s most visionary satirist. Fight Club''s estranged narrator leaves his lackluster job when he comes under the thrall of Tyler Durden, an enigmatic young man who holds secret boxing m', '2015-05-27', 'http://www.goodreads.com/book/show/5759.Fight_Club', 2, 'jimmy', 5, 0, 'fight.jpg', 8),
-(4, 'Identity', 'Milan Kundera', 'n his second novel written in French (after Slowness), Czech-born novelist Kundera employs spare prose in the service of a meditation on the precarious nature of the human sense of self. Recently divorced ad executive Chantal, on a vacation with her young', '2015-05-30', 'http://www.publishersweekly.com/978-0-06-017564-1', 7, 'jimmy', 5, 0, 'identity.jpg', 9),
-(5, 'The Lord of the Rings', 'JRR Tolkien', 'Sauron, the Dark Lord, has gathered to him all the Rings of Power, the means by which he intends to rule Middle-earth. All he lacks in his plans for dominion is the One Ring, the ring that rules them all, which has fallen into the hands of the hobbit', '2015-06-02', 'http://www.fantasybookreview.co.uk/JRR-Tolkien/The-Lord-Of-The-Rings.html', 4, 'nacho', 5, 2, 'rings.jpg', 12),
-(6, 'El Paraiso en la otra esquina', 'Mario Vargas Llosa', 'A century passed between the birth of Flora Tristan and the death of her grandson, the great painter Paul Gauguin. They never met, but both dreamed, each in their own way, with a better world. With this novel we get to know these two great personalities..', '2015-06-04', 'http://www.amazon.com/Para%C3%ADso-esquina-Narrativa-Lectura-Spanish/dp/8466320288', 1, 'skip', 0, 0, 'paraiso.jpg', 7),
-(7, 'In cautarea fericirii', 'Bertrand Russell', 'Fericirea, spune Russel, e o stare care se cucereste. si nu in ultimul rand, credem noi, citind paginile spirituale si pline de eleganta ale acestei carti. Vom constata ca un ganditor englez ramane unul englez tocmai pentru ca nu ne face nici o clip..', '2015-06-11', 'http://www.humanitas.ro/humanitas/%C3%AEn-c%C4%83utarea-fericirii', 3, 'skip', 0, 0, 'russell.jpg', 9),
-(8, 'The Shadow of the Wind ', ' Carlos Ruiz Zafon', 'Barcelona, 1945: A city slowly heals in the aftermath of the Spanish Civil War, and Daniel, an antiquarian book dealer''s son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind, by one Julian Carax.. ', '2015-06-24', 'http://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind', 8, 'kiz', 0, 0, 'zafon.jpg', 8),
-(9, 'a new earth', ' Eckhart Tolle ', 'The highly anticipated follow-up to the 2,000,000 copy bestselling inspirational book, "The Power of Now"\nWith his bestselling spiritual guide "The Power of Now," Eckhart Tolle inspired millions of readers to discover the freedom..', '2015-06-25', 'http://www.goodreads.com/book/show/76334.A_New_Earth', 4, 'nacho', 0, 0, 'earth.jpg', 9),
-(10, 'The Power of Now\n', ' Eckhart Tolle ', 'Ekhart Tolle''s message is simple: living in the now is the truest path to happiness and enlightenment. And while this message may not seem stunningly original or fresh, Tolle''s clear writing..', '2015-07-15', 'http://www.goodreads.com/book/show/6708.The_Power_of_Now', 0, 'cico', 0, 0, 'power.jpg', 10),
+(4, 'Identity', 'Milan Kundera', 'n his second novel written in French (after Slowness), Czech-born novelist Kundera employs spare prose in the service of a meditation on the precarious nature of the human sense of self. Recently divorced ad executive Chantal, on a vacation with her young', '2015-05-30', 'http://www.publishersweekly.com/978-0-06-017564-1', 7, 'jimmy', 6, 1, 'identity.jpg', 9),
+(5, 'The Lord of the Rings', 'JRR Tolkien', 'Sauron, the Dark Lord, has gathered to him all the Rings of Power, the means by which he intends to rule Middle-earth. All he lacks in his plans for dominion is the One Ring, the ring that rules them all, which has fallen into the hands of the hobbit', '2015-06-02', 'http://www.fantasybookreview.co.uk/JRR-Tolkien/The-Lord-Of-The-Rings.html', 4, 'nacho', 6, 2, 'rings.jpg', 12),
+(6, 'El Paraiso en la otra esquina', 'Mario Vargas Llosa', 'A century passed between the birth of Flora Tristan and the death of her grandson, the great painter Paul Gauguin. They never met, but both dreamed, each in their own way, with a better world. With this novel we get to know these two great personalities..', '2015-06-04', 'http://www.amazon.com/Para%C3%ADso-esquina-Narrativa-Lectura-Spanish/dp/8466320288', 1, 'skip', 4, 1, 'paraiso.jpg', 7),
+(7, 'In cautarea fericirii', 'Bertrand Russell', 'Fericirea, spune Russel, e o stare care se cucereste. si nu in ultimul rand, credem noi, citind paginile spirituale si pline de eleganta ale acestei carti. Vom constata ca un ganditor englez ramane unul englez tocmai pentru ca nu ne face nici o clip..', '2015-06-11', 'http://www.humanitas.ro/humanitas/%C3%AEn-c%C4%83utarea-fericirii', 3, 'skip', 2, 0, 'russell.jpg', 9),
+(8, 'The Shadow of the Wind ', ' Carlos Ruiz Zafon', 'Barcelona, 1945: A city slowly heals in the aftermath of the Spanish Civil War, and Daniel, an antiquarian book dealer''s son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind, by one Julian Carax.. ', '2015-06-24', 'http://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind', 8, 'kiz', 3, 0, 'zafon.jpg', 8),
+(9, 'a new earth', ' Eckhart Tolle ', 'The highly anticipated follow-up to the 2,000,000 copy bestselling inspirational book, "The Power of Now"\nWith his bestselling spiritual guide "The Power of Now," Eckhart Tolle inspired millions of readers to discover the freedom..', '2015-06-25', 'http://www.goodreads.com/book/show/76334.A_New_Earth', 4, 'nacho', 2, 0, 'earth.jpg', 9),
+(10, 'The Power of Now\n', ' Eckhart Tolle ', 'Ekhart Tolle''s message is simple: living in the now is the truest path to happiness and enlightenment. And while this message may not seem stunningly original or fresh, Tolle''s clear writing..', '2015-07-15', 'http://www.goodreads.com/book/show/6708.The_Power_of_Now', 0, 'cico', 3, 0, 'power.jpg', 10),
 (11, 'The Wisdom of Insecurity', ' Alan W. Watts ', 'In this fascinating book, Alan Watts explores man''s quest for psychological security, examining our efforts to find spiritual and intellectual certainty in the realms of religion and philosophy..', '2015-08-11', 'http://www.goodreads.com/book/show/551520.The_Wisdom_of_Insecurity', 1, 'nacho', 0, 0, 'watts.jpg', 7),
-(12, 'One Hundred Years of Solitude ', 'Gabriel Garcia Marquez', 'One Hundred Years of Solitude has been written with the recent Latin American literature of fantasy so firmly in mind that on one level it operates as parody of and reflection on what has gone before. .', '2015-07-16', 'http://www.theguardian.com/theguardian/2014/apr/17/one-hundred-years-of-solitude-review', 0, 'kiz', 0, 1, '100.jpg', 8),
-(13, 'Maktub ', 'Paulo Coelho', 'Maktub não é um livro de conselhos, mas uma troca de experiências. A maior parte dos textos se refere a ensinamentos que Paulo Coelho recebeu de seu mestre ao longo de 11 anos. O', '2015-07-15', 'http://www.goodreads.com/book/show/53809.Maktub', 0, 'nacho', 0, 1, 'maktub.jpg', 7);
+(12, 'One Hundred Years of Solitude ', 'Gabriel Garcia Marquez', 'One Hundred Years of Solitude has been written with the recent Latin American literature of fantasy so firmly in mind that on one level it operates as parody of and reflection on what has gone before. .', '2015-07-16', 'http://www.theguardian.com/theguardian/2014/apr/17/one-hundred-years-of-solitude-review', 0, 'kiz', 2, 1, '100.jpg', 8),
+(13, 'Maktub ', 'Paulo Coelho', 'Maktub não é um livro de conselhos, mas uma troca de experiências. A maior parte dos textos se refere a ensinamentos que Paulo Coelho recebeu de seu mestre ao longo de 11 anos. O', '2015-07-15', 'http://www.goodreads.com/book/show/53809.Maktub', 0, 'nacho', 3, 1, 'maktub.jpg', 7);
 
 -- --------------------------------------------------------
 
@@ -107,6 +107,21 @@ INSERT INTO `comments` (`post_id`, `name`, `post_content`, `time_posted`, `artic
 (24, 'gigi', 'one to do it and 2 more to say ...dude you re huge', '2015-05-24', 5),
 (25, 'bascula', 'how maany philosophers does it take to screw a lightbulb?', '2015-05-24', 7),
 (26, 'gigi', 'does the lightbulb want to be unscrewed?', '2015-05-24', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` int(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
