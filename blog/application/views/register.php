@@ -16,24 +16,24 @@
 		 	<br/>
 		</div>	
 		<div class="log_reg">
-			<?php echo form_open('blog/register_validation'); ?>
+			<?php echo form_open('blog/register'); ?>
 			<h2>Register</h2>
 			<br />
-			<h3>Name :</h3>
+			<h3>U-Name :</h3>
 			<input type="text" name="name" size="20" style="border-radius:4px;" required>
-			<?php echo form_error('name'); ?>
+			<?php echo form_error('name','<div class="error">', '</div>'); ?>
 			<h3>Email :</h3>
-			<input type="text" name="email" size="20" style="border-radius:4px;" required>
-			<?php echo form_error('email'); ?>
+			<input type="email" name="email" size="20" style="border-radius:4px;" required>
+			<?php echo form_error('email','<div class="error">', '</div>'); ?>
 			<h3>Phone :</h3>
-			<input type="text" name="phone" size="20" style="border-radius:4px;" required>
-			<?php echo form_error('phone'); ?>
+			<input type="phone" name="phone" size="20" style="border-radius:4px;" required>
+			<?php echo form_error('phone','<div class="error">', '</div>'); ?>
 			<h3>Password :</h3>
 			<input type="password" name="pass" size="20" style="border-radius:4px;" required>
-			<?php echo form_error('pass'); ?>
+			<?php echo form_error('pass','<div class="error">', '</div>'); ?>
 			<h3>Retype Password :</h3>
 			<input type="password" name="pass_2" size="20" style="border-radius:4px;" required>
-			<?php echo form_error('pass_2'); ?>			
+			<?php echo form_error('pass_2','<div class="error">', '</div>'); ?>			
 		    <h3>...</h3>                      
 	        <?php echo form_submit('register','Register','class="comm_button"'); ?> 	
 			<?php form_close(); ?>		

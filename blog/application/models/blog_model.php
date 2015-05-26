@@ -89,17 +89,25 @@ class Blog_Model extends CI_Model {
 		$this->db->update('articles',$data);
 	} 
 
-	function register(){
-			$name   = $this->input->post('name');
-			$email  = $this->input->post('email');
-			$phone  = $this->input->post('phone');
+	function registering($name,$email,$phone,$pass){
 			$info = array(
 					'name'     =>  $name,
 					'email'    =>  $email,
 					'phone'    =>  $phone,
-					'password' => $pass
+					'password' =>  $pass
 			);
 				$this->db->insert('users',$info);	
+	}
+
+	function loggingin($name,$pass){
+		$this->db->where('name', $name);
+		$this->db->where('password', $pass);
+		$q = $this->db->get('users');
+		if($q->num_rows()== 1){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
 	}
 
     function check_name($name){

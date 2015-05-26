@@ -16,15 +16,15 @@
 		 	<br/>
 		</div>	
 		<div class="log_reg">
-			<?php echo form_open('blog/loggedin'); ?>
+			<?php echo form_open('blog/login'); ?>
 			<h2>Login</h2>
 			<br />
 			<h3>Name :</h3>
 			<input type="text" name="name" size="20" style="border-radius:4px;" required>
-			<?php echo validation_errors('name'); ?>
+			<?php echo form_error('name','<div class="error">', '</div>'); ?>
 			<h3>Password :</h3>
 			<input type="password" name="pass" size="20" style="border-radius:4px;" required>
-			<?php echo validation_errors('pass'); ?>
+			<?php echo form_error('pass','<div class="error">', '</div>'); ?>
 		    <h3>...</h3>                      
 	        <?php echo form_submit('login','Go fish','class="comm_button"'); ?> 	
 			<?php form_close(); ?>		

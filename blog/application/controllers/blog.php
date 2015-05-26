@@ -123,33 +123,38 @@ class Blog extends CI_Controller {
 
 	}
 	function login(){
-		$data = array();
-		$data['title'] = 'login';
-		$this->load->view('head',$data);
-		$this->load->view('left_menu');
-		$this->load->view('login');
-		$data['top_article'] = $this->blog_model->getTopArticle();
-		$this->load->view('prefooter',$data);
-		$data['last_comment'] = $this->blog_model->getLastComm();
-		$this->load->view('comments',$data);
-		$this->load->view('footer');
+		$this->form_validation->set_rules('name','Name','trim|xss_clean|required');
+		$this->form_validation->set_rules('pass','Password','trim|xss_clean|required|callback_check_login');
+		if($this->form_validation->run()== FALSE){
+			$data = array();
+			$data['title'] = 'login';
+			$this->load->view('head',$data);
+			$this->load->view('left_menu');
+			$this->load->view('login');
+			$data['top_article'] = $this->blog_model->getTopArticle();
+			$this->load->view('prefooter',$data);
+			$data['last_comment'] = $this->blog_model->getLastComm();
+			$this->load->view('comments',$data);
+			$this->load->view('footer');
+		}else{
+			$name = $this->input->post('name');
+			$pass = md5($this->input->post('pass'));
+				redirect('blog/articles');
+		}
+	}
+
+	function check_login(){
+			$name = $this->input->post('name');
+			$pass = md5($this->input->post('pass'));
+			if($this->blog_model->loggingin($name,$pass) == TRUE){
+				return TRUE;
+			}else{
+				$this->form_validation->set_message('check_login','invalid uname and|or password!');
+				return FALSE;
+			}	
 	}
 
 	function register(){
-		$data = array();
-		$data['title'] = 'register';
-		$this->load->view('head',$data);
-		$this->load->view('left_menu');
-		$this->load->view('register');
-		$data['top_article'] = $this->blog_model->getTopArticle();
-		$this->load->view('prefooter',$data);
-		$data['last_comment'] = $this->blog_model->getLastComm();
-		$this->load->view('comments',$data);
-		$this->load->view('footer');
-	}	
-
-
-	function register_validation(){
 		$this->form_validation->set_rules('name','Name','trim|xss_clean|required|callback_check_name');
 		$this->form_validation->set_rules('email','Email','trim|xss_clean|required|callback_check_email|valid_email');
 		$this->form_validation->set_rules('phone','Phone','trim|xss_clean|required|numeric|callback_check_phone|min_length[10]|max_length[13]');
@@ -162,24 +167,41 @@ class Blog extends CI_Controller {
         $this->form_validation->set_message('valid_email','must write valid email');
 
 		if($this->form_validation->run()== FALSE){
-			echo 'validation error';
+			$data = array();
+			$data['title'] = 'register';
+			$this->load->view('head',$data);
+			$this->load->view('left_menu');
+			$this->load->view('register');
+			$data['top_article'] = $this->blog_model->getTopArticle();
+			$this->load->view('prefooter',$data);
+			$data['last_comment'] = $this->blog_model->getLastComm();
+			$this->load->view('comments',$data);
+			$this->load->view('footer');
 		}else{
-				if($this->blog_model->register() == FALSE){
-					
-				}else{
-					redirect('blog/success');
-				}
-		}		
+			$name   = $this->input->post('name');
+			$email  = $this->input->post('email');
+			$phone  = $this->input->post('phone');
+			$pass   = $this->input->post('pass');
+			$pass   = md5($pass);
+			$pass_2 = $this->input->post('pass_2');
+			$pass_2 = md5($pass_2);
+			$this->blog_model->registering($name,$email,$phone,$pass);
+			redirect('blog/login');
+		}
 	}	
-	function check_pass(){
+
+
+	
+	function check_pass($pass,$pass_2){
 			$pass   = $this->input->post('pass');
 			$pass   = md5($pass);
 			$pass_2 = $this->input->post('pass_2');
 			$pass_2 = md5($pass_2);
 			if($pass == $pass_2){
-			 	$this->blog_model->register($pass);	
+				return TRUE;				
 			}else{
 				$this->form_validation->set_message('check_pass','passwords do not match');
+				return FALSE;					
 			}		
 	}
 
