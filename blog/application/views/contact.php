@@ -64,8 +64,6 @@
 
 		</div>
 	</div>	
-	<div class="an">
-       	<img src="<?php echo base_url(); ?>assets/images/an.jpg"/>
-    </div>	
+    <img class= "an" src="<?php echo base_url(); ?>assets/images/an.jpg"/ alt="">
 
 </div>
