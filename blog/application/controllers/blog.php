@@ -81,19 +81,17 @@ class Blog extends CI_Controller {
 		
 	}
 
-	function vote(){	
-
-			$like   = $this->input->post('like');
-			$unlike = $this->input->post('unlike');
-			$id     = $this->input->post('id');
-			if(isset($like) && !empty($like)){
-				$this->blog_model->like($id);
-			}elseif(isset($unlike) && !empty($unlike)){
-				$this->blog_model->unlike($id);
-			}
-			$page = $this->uri->segment(3);
-			redirect('blog/articles/'.$page);			
+	function vote_like(){	
+			$id  = $this->input->post('id');
+			$data['result'] = $this->blog_model->like($id);
+			print_r($data['result']['likes']);		
 	}
+
+	function vote_unlike(){	
+			$id  = $this->input->post('id');
+			$data['result'] = $this->blog_model->unlike($id);
+			print_r($data['result']['dislikes']);		
+	}	
 
 	function gallery(){
 		$data = array();	    		

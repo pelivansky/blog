@@ -2,10 +2,10 @@
         <div class="leftmenu">
             <div class="nav">
               <ul>
-                <li><a href="<?php echo base_url(); ?>blog/home">Home</a></li>
-                <li><a href="<?php echo base_url(); ?>blog/articles">Articles</a></li>
-                <li><a href="<?php echo base_url(); ?>blog/gallery">Gallery</a></li>
-                <li><a href="<?php echo base_url(); ?>blog/contact">Contact</a></li>
+                <li class="<?php if($this->uri->segment(2)=="home"){echo "activelink";}?>" ><a href="<?php echo base_url(); ?>blog/home">Home</a></li>
+                <li class="<?php if($this->uri->segment(2)=="articles"){echo "activelink";}?>" ><a href="<?php echo base_url(); ?>blog/articles">Articles</a></li>
+                <li class="<?php if($this->uri->segment(2)=="gallery"){echo "activelink";}?>"><a href="<?php echo base_url(); ?>blog/gallery">Gallery</a></li>
+                <li class="<?php if($this->uri->segment(2)=="contact"){echo "activelink";}?>"><a href="<?php echo base_url(); ?>blog/contact">Contact</a></li>
               </ul>
             </div>
             <div class="share_stuff">

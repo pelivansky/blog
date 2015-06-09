@@ -77,6 +77,8 @@ class Blog_Model extends CI_Model {
 			);
 		$this->db->where('id', $id);
 		$this->db->update('articles',$data);
+		return $data;
+
 	} 
 	function unlike($id){
 		$this->db->where('id', $id);
@@ -87,6 +89,7 @@ class Blog_Model extends CI_Model {
 			);
 		$this->db->where('id', $id);
 		$this->db->update('articles',$data);
+		return $data;
 	} 
 
 	function registering($name,$email,$phone,$pass){
